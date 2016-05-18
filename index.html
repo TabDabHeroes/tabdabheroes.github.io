@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WikiMe - A webapp to stalk yourself</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> 
+	<script src="app.js"></script>
+  </head>
+
+  <body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+     
+     <div class="landingpage">
+     	<h1 class="Header"><h>W</h>IKI<h>M</h>E</h1>
+     	<h2 class="Welcome Text">If you had a Wikipedia article after you, what would it be about?</h2>
+
+     	 <div class="search">
+      	<input type="search" id="searchInput" placeholder="Search">
+      	<input type="submit" id="searchButton" value="">
+      	</div>
+     </div>
+
+     <div class="resultpage" style="display:none">
+      <div class="sidebar">SideBar:</div>
+      <div class="search">
+      	<input type="search" id="searchInput" placeholder="Search">
+      	<input type="submit" id="searchButton" value="">
+      	</div>
+      <div class="output">Output</div>
+ 	 </div>
+
+    </div>
+
+
+
+  </body>
+</html>
