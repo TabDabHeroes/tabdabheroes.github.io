@@ -1,0 +1,106 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>Translate</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> 
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="supportTranslate.css">
+
+  </head>
+
+  <body>
+<!--     <table id="app">
+      <tr>
+        <th>Customer's message </th>
+        <th>Customer's Translated message</th>
+      </tr>
+
+      <tr>
+        <td>
+          <textarea class="textInput" id="customerMsg" >Bonjour,
+
+</textarea>
+          <button id="transToEng">Translate!</button>
+        </td>
+        <td><div id="customerTrans" class="textDisplay"></div></td>
+      </tr>
+
+      <tr>
+        <th>My message </th>
+        <th>My translated message</th>
+      </tr>
+
+      <tr>
+        <td>
+          <textarea class="textInput" id="myMsg"></textarea>
+          <button id="transToLang">Translate!</button>
+        </td>
+        <td><div id="myTrans" class="textDisplay"></div></td>
+      </tr>
+  </table> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="well">
+          <h5 id="before">
+          Customer's message:
+        </h5>
+          <textarea class="form-control" id="customerMsg" rows="5"></textarea>
+          <br>
+
+          <div id="after">
+          <button id="transToEng" class="btn btn-default">Translate!</button>
+
+          <div id='lang'>Language: </div>
+        </div>
+        </div>
+      </div>
+
+   
+      <div class="col-sm-6">
+        <div class="well">
+          
+          <h5>Translated:</h5>
+          <div id="customerTrans" class="textDisplay"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-sm-6">
+        <div class="well">
+          <div id="before">
+          Hello,
+          <br>
+          For your convenience, this message has been translated by Google Translate:
+          
+          <h5>
+          Your message:</h5></div>
+            <textarea class="form-control" id="myMsg"></textarea>
+          <p id="after" >
+            Best regards,
+          </p>
+
+          <button id="transToLang" class="btn btn-default">Translate!</button>
+
+        </div>
+      </div>
+
+      <div class="col-sm-6"> 
+        <div class="well">
+          <h5>Translated:</h5>
+          <div id="myTrans" class="textDisplay"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="supportTranslate.js"></script>
+  </body>
+</html>
