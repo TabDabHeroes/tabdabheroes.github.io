@@ -59,27 +59,27 @@ function translateRequest(url, callbackfn){
 }
 
 function translateToEng(){
-	var langFrom;
+	var LangFrom;
 
 	if(isAuto){
-		langFrom='auto';
+		LangFrom='auto';
 	}
 	else{
-		langFrom=$('#langInput').val();
+		LangFrom=$('#langInput').val();
 	}
 
 	var msgText = customerMsg.val();
 
-	var urlToEng = translateURL(langFrom, 'en', msgText);
+	var urlToEng = translateURL(LangFrom, 'en', msgText);
 
 	translateRequest(urlToEng, function(response){
-		customerTrans[0].innerText = response[0];
-		lang = response[1];
-		if(isAuto && $('#langInput').val() != lang){
+    	customerTrans[0].innerText = response[0];
+    	lang = response[1];
+    	if(isAuto && $('#langInput').val() != lang){
 			languageBar.val(lang).trigger('change');
 			translateToLang();
 			//updateFillerText();
-		}
+    	}
 	});
 }
 
@@ -87,18 +87,11 @@ function translateToLang(){
 
 	//updateFillerText();
 
-	var langTo;
-
-	if(isAuto){
-		langTo = 'auto';
-	}
-	else{
-		langTo = $('#langInput').val();
-	}
+	lang = $('#langInput').val();
 
 	var msgText = myMsg.val()
 
-	var urlToLang = translateURL('en', langTo, msgText);
+	var urlToLang = translateURL('en', lang, msgText);
 
 	translateRequest(urlToLang, function(response){
 
@@ -106,8 +99,10 @@ function translateToLang(){
 
 		var urlBack = translateURL(lang, 'en', response[0]);
 
-		translateRequest(urlBack, function(response){	
-			$('#backInEng')[0].innerText = response[0];
+		translateRequest(urlBack, function(response){
+			if(response[1]){				
+				$('#backInEng')[0].innerText = response[0];
+			}
 		})
 	});
 }
