@@ -97,7 +97,7 @@ function translateToLang(){
 
 		myTrans[0].innerText = response[0] +"\n\n"+ "------" + "\n\n"+ msgText;
 
-		var urlBack = translateURL(lang, 'en', response[0]);
+		var urlBack = translateURL(langTo, 'en', response[0]);
 
 		translateRequest(urlBack, function(response){
 			if(response[1]){				
