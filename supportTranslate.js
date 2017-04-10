@@ -30,8 +30,8 @@ function parseResponse(response){
 
 	response = JSON.parse(response);
 
-	if(response[1] != 0){
-		responseLang = response[1];
+	if(response[2] !== null && response[2] !== ""){
+		responseLang = response[2];
 
 		for(var i=0; i<response[0].length; i++){
 			responseText+=response[0][i][0];
@@ -75,7 +75,7 @@ function translateToEng(){
 	translateRequest(urlToEng, function(response){
     	customerTrans[0].innerText = response[0];
     	lang = response[1];
-    	if(isAuto && $('#langInput').val() != lang){
+    	if(isAuto && $('#langInput').val() !== lang){
 			languageBar.val(lang).trigger('change');
 			translateToLang();
 			//updateFillerText();
@@ -86,14 +86,8 @@ function translateToEng(){
 function translateToLang(){
 
 	//updateFillerText();
-	var langTo;
-
-	if(isAuto){
-		langTo='auto';
-	}
-	else{
-		langTo=$('#langInput').val();
-	}
+	
+	var langTo = $('#langInput').val();
 
 	var msgText = myMsg.val()
 
